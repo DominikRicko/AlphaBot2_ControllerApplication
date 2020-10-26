@@ -40,6 +40,7 @@
             this.btn_cam_up = new System.Windows.Forms.Button();
             this.btn_cam_down = new System.Windows.Forms.Button();
             this.btn_cam_right = new System.Windows.Forms.Button();
+            this.label_Ping = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_video)).BeginInit();
             this.gb_Movement.SuspendLayout();
             this.gb_cam_rotation.SuspendLayout();
@@ -244,11 +245,26 @@
             this.btn_cam_right.MouseLeave += new System.EventHandler(this.Mouse_Away);
             this.btn_cam_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
             // 
+            // label_Ping
+            // 
+            this.label_Ping.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_Ping.BackColor = System.Drawing.Color.Transparent;
+            this.label_Ping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Ping.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label_Ping.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label_Ping.Location = new System.Drawing.Point(972, 431);
+            this.label_Ping.Name = "label_Ping";
+            this.label_Ping.Size = new System.Drawing.Size(100, 25);
+            this.label_Ping.TabIndex = 15;
+            this.label_Ping.Text = "delay";
+            this.label_Ping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ControllerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 605);
+            this.Controls.Add(this.label_Ping);
             this.Controls.Add(this.gb_cam_rotation);
             this.Controls.Add(this.gb_Movement);
             this.Controls.Add(this.rtxBox);
@@ -280,5 +296,6 @@
         private System.Windows.Forms.Button btn_cam_up;
         private System.Windows.Forms.Button btn_cam_down;
         private System.Windows.Forms.Button btn_cam_right;
+        private System.Windows.Forms.Label label_Ping;
     }
 }

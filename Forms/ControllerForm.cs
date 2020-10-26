@@ -21,7 +21,7 @@ namespace MobileRobotController
             pBox_video.SizeMode = PictureBoxSizeMode.StretchImage; 
             this.Text = device.Name;
 
-            sshConsole = new SSHConsole(sshClient,rtxBox);
+            sshConsole = new SSHConsole(sshClient,rtxBox,label_Ping);
             sshConsole.SSHException += SshConsole_SSHException;
 
             camera = new MJPEGStream("http://" + device.IP.ToString() + ":8080/?action=stream");
@@ -91,10 +91,6 @@ namespace MobileRobotController
             Cleanup();
             sshConsole.WriteLine("\x04");
             sshConsole.WriteLine("sudo killall mjpg_streamer");
-
-            //to prevent SSHClient from deadlocking the application upon disconnecting,
-            //for some reason, the last sent line should not be a command like that above
-            sshConsole.WriteLine("cd");
         }
 
         private void Video_newFrame(object sender, NewFrameEventArgs e)
